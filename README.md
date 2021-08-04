@@ -60,3 +60,15 @@ decline in the fertility rate as well.*” One of the causes that might
 have effect to this factor is that Japan has a well-developed health
 care system and have kept developing, thus, their elder population keeps
 booming.
+
+<p>
+
+ 
+
+</p>
+
+###### Sources of Data:
+
+  - [World Bank Open Data](https://data.worldbank.org/)
+  - [Package
+    ‘wbstats’](https://cran.r-project.org/web/packages/wbstats/wbstats.pdf)
