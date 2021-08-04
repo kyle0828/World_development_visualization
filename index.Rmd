@@ -40,3 +40,8 @@ population_plot
 
 ##### Insight:
 Japan starts to become an aging society in 1997, and clearly the gap between these two age groups is significantly increasing. According to the news from [Diplomat Media](https://thediplomat.com/2019/11/how-does-japans-aging-society-affect-its-economy/), "*Due to the nation’s aging and shrinking population, there is an increased need to address the labor shortage. People eventually retire and leave the workforce as they start aging, and at present, there are not enough young people in Japan to fill this vacuum owing to the decline in the fertility rate as well.*" One of the causes that might have effect to this factor is that Japan has a well-developed health care system and have kept developing, thus, their elder population keeps booming.
+
+<p>&nbsp;</p>
+###### Sources of Data:
+- [World Bank Open Data](https://data.worldbank.org/)
+- [Package ‘wbstats’](https://cran.r-project.org/web/packages/wbstats/wbstats.pdf)
