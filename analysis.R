@@ -7,6 +7,7 @@ library("RColorBrewer")
 library("wbstats")
 options(scipen = 999) #prevent scientific notation
 
+
 ### CO2 Emissions by Country ###
 top_6_co2_countries <- 
   wb(country = "countries_only", indicator = c("EN.ATM.CO2E.KT"), mrv = 1) %>%
@@ -27,10 +28,11 @@ india_electric <-
   mutate(electric_OGC = EG.ELC.FOSL.ZS, electric_renewable = EG.ELC.RNWX.ZS, other = 100-(EG.ELC.FOSL.ZS+EG.ELC.RNWX.ZS)) %>%
   gather(key= category, value = value, other, electric_renewable, electric_OGC)
 
-### create line plot ###
+### create bar chart ###
 india_electric_plot <- 
   ggplot(india_electric, aes(fill=category, y=value, x=date)) + 
-  geom_bar(stat="identity", position=position_dodge()) +
+  geom_bar(stat="identity", position="dodge") +
+  geom_text(aes(label=round(value, 1)), position=position_dodge(width=0.9), vjust=-0.25) +
   labs(title = "India Electricity Production from 2013 to 2015", x = "Year", y= "Percentage") +
   theme(plot.title = element_text(color="black", size=14, face="bold")) + 
   scale_fill_discrete(name= "Source of Production", labels = c("oil, gas, and coal", "renewable", "other"))
@@ -55,7 +57,7 @@ india_wealth_plot <- ggplot(data = india_income_years) +
   theme(plot.title = element_text(color="black", size=14, face="bold")) +
   scale_color_discrete(name= "Group", labels = c("Bottom 40% of Pop.", "Top 10% of Pop."))
 
-india_wealth_plot
+
 ### Map: Changes in Forestation around the World ###
 # data wrangling
 forest_area <- 
@@ -118,6 +120,3 @@ population_plot <- ggplot(data = population_growth , mapping = aes(x = date, y =
         plot.title = element_text(color="black", size=16, face="bold")) +
   scale_x_discrete(guide = guide_axis(n.dodge = 2)) +
   scale_color_discrete(name= "Age", labels = c("0-14", "65 and above"))
-
-population_plot
-
